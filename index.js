@@ -5,6 +5,8 @@
 
 function findStringLength(str) {
   // Використовуємо властивість length, щоб знайти довжину рядка str
+  let result = str.length;
+  return result;
 }
 
 console.log("Завдання 1 ====================================");
@@ -16,6 +18,8 @@ console.log(
 // Завдання 2: Напишіть функцію, яка генерує рядок з символів на основі їх кодів Unicode
 
 function generateStringFromCharCode(code1, code2, code3, code4, code5) {
+  let result = String.fromCharCode(code1, code2, code3, code4, code5);
+  return result;
   // Використовуємо String.fromCharCode(), щоб створити рядок з символів code1, code2, code3, code4, code5 на основі їх кодів Unicode
 }
 
@@ -28,6 +32,8 @@ console.log(
 // Завдання 3: Напишіть функцію, яка генерує рядок з символів на основі їх кодів Unicode
 
 function generateStringFromCodePoint(code1, code2, code3, code4) {
+  let result = String.fromCodePoint(code1, code2, code3, code4);
+  return result;
   // Використовуємо String.fromCodePoint(), щоб створити рядок з символів code1, code2, code3, code4 на основі їх кодів Unicode
 }
 
@@ -41,6 +47,8 @@ console.log(
 
 function rawString() {
   // Використовуємо String.raw, щоб створити рядок "Привіт\u000A!", який ігнорує спеціальні символи
+  let result = String.raw`Привіт\u000A!`;
+  return result;
 }
 
 console.log("Завдання 4 ====================================");
@@ -50,6 +58,9 @@ console.log("rawString()", rawString()); // Виведе Привіт\u000A!
 
 function concatenateStrings(str1, str2) {
   // Використовуємо метод concat(), щоб об'єднати два рядки str1 та str2
+
+  let result = str1.concat(str2);
+  return result;
 }
 
 console.log("Завдання 5 ====================================");
@@ -61,7 +72,9 @@ console.log(
 // Завдання 6: Напишіть функцію, яка перевіряє, чи входить підрядок в рядок
 
 function checkIfIncludes(mainStr, subStr) {
-  // Використовуємо метод includes(), щоб перевірити, чи входить підрядок subStr в рядок mainStr
+  // Використовуємо метод , щоб перевірити, чи входить підрядок subStr в рядок mainStr
+  let result = mainStr.includes(subStr);
+  return result;
 }
 
 console.log("Завдання 6 ====================================");
@@ -74,6 +87,8 @@ console.log(
 
 function findIndexOf(mainStr, subStr) {
   // Використовуємо метод indexOf(), щоб знайти індекс підрядка subStr в рядку mainStr
+  let result = mainStr.indexOf(subStr);
+  return result;
 }
 
 console.log("Завдання 7 ====================================");
@@ -86,6 +101,8 @@ console.log(
 
 function findLastIndexOf(mainStr, subStr) {
   // Використовуємо метод lastIndexOf(), щоб знайти останній індекс підрядка subStr в рядку mainStr
+  let result = mainStr.lastIndexOf(subStr);
+  return result;
 }
 
 console.log("Завдання 8 ====================================");
@@ -98,6 +115,8 @@ console.log(
 
 function checkIfStartsWith(mainStr, subStr) {
   // Використовуємо метод startsWith(), щоб перевірити, чи починається рядок mainStr з певного підрядка subStr
+  let result = mainStr.startsWith(subStr);
+  return result;
 }
 
 console.log("Завдання 9 ====================================");
@@ -110,6 +129,8 @@ console.log(
 
 function checkIfEndsWith(mainStr, subStr) {
   // Використовуємо метод endsWith(), щоб перевірити, чи закінчується рядок mainStr певним підрядком subStr
+  let result = mainStr.endsWith(subStr);
+  return result;
 }
 
 console.log("Завдання 10 ====================================");
@@ -122,10 +143,15 @@ console.log(
 
 function compareCharCodeAtAndCodePointAt(string, index) {
   // Використовуємо метод charAt(), щоб отримати символ з рядка на певній позиції, та запишемо результат в змінну charAtResult
+  let charAtResult = string.charAt(index);
   // Використовуємо метод at(), щоб отримати символ з рядка на певній позиції, та запишемо результат в змінну atResult
+  let atResult = string.at(index);
   // Використовуємо метод charCodeAt(), щоб отримати код символа з рядка на певній позиції, та запишемо результат в змінну charCodeAtResult
+  let charCodeAtResult = string.charCodeAt(index);
   // Використовуємо метод codePointAt(), щоб отримати код символа з рядка на певній позиції, та запишемо результат в змінну codePointAtResult
+  let codePointAtResult = string.codePointAt(index);
   // Повертаємо рядок в форматі  `charCodeAt:${charCodeAtResult}, codePointAt:${codePointAtResult}, charAt:${charAtResult}, at: ${atResult}`
+  return `charCodeAt:${charCodeAtResult}, codePointAt:${codePointAtResult}, charAt:${charAtResult}, at: ${atResult}`;
 }
 
 console.log("Завдання 11 ====================================");
@@ -148,12 +174,22 @@ console.log(
 
 function padString(original, length, padWith, side) {
   // Перевіряємо, який бік було вказано
-  // Якщо "start", використовуємо padStart
-  // Використовуємо метод padStart(), щоб доповнити рядок string до певної довжини length, вставляючи символи padWith на початку
-  // Якщо "end", використовуємо padEnd
-  // Використовуємо метод padEnd(), щоб доповнити рядок string до певної довжини length, вставляючи символи padWith на в кінці
-  // Якщо бік не вказано або вказано неправильно, повертаємо повідомлення "Error: side should be either 'start' or 'end'"
+  if (side === "start") {
+    let result = original.padStart(length, padWith);
+    return result;
+  }
+  if (side === "end") {
+    let result = original.padEnd(length, padWith);
+    return result;
+  } else {
+    return "Error: side should be either 'start' or 'end'";
+  }
 }
+// Якщо "start", використовуємо padStart
+// Використовуємо метод padStart(), щоб доповнити рядок string до певної довжини length, вставляючи символи padWith на початку
+// Якщо "end", використовуємо padEnd
+// Використовуємо метод padEnd(), щоб доповнити рядок string до певної довжини length, вставляючи символи padWith на в кінці
+// Якщо бік не вказано або вказано неправильно, повертаємо повідомлення "Error: side should be either 'start' or 'end'"
 
 console.log("Завдання 12 ====================================");
 console.log(
@@ -170,6 +206,20 @@ console.log(
 
 function trimString(original, side) {
   // Якщо значення аргументу "side" дорівнює "start"
+  if (side === "start") {
+    let result = original.trimStart();
+    return result;
+  }
+  if (side === "end") {
+    let result = original.trimEnd();
+    return result;
+  }
+  if (side === "both") {
+    let result = original.trim();
+    return result;
+  } else {
+    return "Error: side should be either 'both', 'start' or 'end'";
+  }
   // Повертаємо рядок, в якому видалені пробіли на початку
   // Якщо значення аргументу "side" дорівнює "end"
   // Повертаємо рядок, в якому видалені пробіли в кінці
@@ -193,7 +243,17 @@ function convertCase(original, caseType) {
   // Якщо значення аргументу "caseType" дорівнює "lower"
   // Повертаємо рядок, в якому всі букви перетворені в нижній регістр
   // Якщо значення аргументу "caseType" не є ні "upper", ні "lower", повертаємо повідомлення "Error: caseType should be either 'upper' or 'lower'"
-  return "Error: caseType should be either 'upper' or 'lower'";
+
+  if (caseType === "upper") {
+    let result = original.toUpperCase();
+    return result;
+  }
+  if (caseType === "lower") {
+    let result = original.toLowerCase();
+    return result;
+  } else {
+    return "Error: caseType should be either 'upper' or 'lower'";
+  }
 }
 
 console.log("Завдання 14 ====================================");
@@ -205,6 +265,9 @@ console.log('convertCase("abc", "middle")', convertCase("abc", "middle")); // В
 
 function repeatString(string, times) {
   // Використовуємо метод repeat(), щоб повторити рядок певну кількість разів times
+
+  let result = string.repeat(times);
+  return result;
 }
 
 console.log("Завдання 15 ====================================");
@@ -214,6 +277,8 @@ console.log('repeatString("abc", 3)', repeatString("abc", 3)); // Виведе '
 
 function sliceString(string, startIndex, endIndex) {
   // Використовуємо метод slice(), щоб видалити частину рядка string між двома індексами startIndex та endIndex
+  let result = string.slice(startIndex, endIndex);
+  return result;
 }
 
 console.log("Завдання 16 ====================================");
@@ -226,6 +291,8 @@ console.log(
 
 function substringString(string, startIndex, endIndex) {
   // Використовуємо метод substring(), щоб видалити частину рядка string між двома індексами startIndex та endIndex
+  let result = string.substring(startIndex, endIndex);
+  return result;
 }
 
 console.log("Завдання 17 ====================================");
